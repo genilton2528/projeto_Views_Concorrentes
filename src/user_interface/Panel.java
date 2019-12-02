@@ -1,5 +1,8 @@
 package user_interface;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Panel extends javax.swing.JFrame {
 
     public Panel() {
@@ -97,7 +100,7 @@ public class Panel extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(23, 23, 23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sleep_time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -132,7 +135,7 @@ public class Panel extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
@@ -140,6 +143,9 @@ public class Panel extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Button_StartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_StartActionPerformed
+        Panel.view_value.setText("00");
+        Panel.like_value.setText("00");
+        Panel.dislike_value.setText("00");
         Thread thread = new Thread(new UpdateValue(Convert.converteInt(this.sleep_time.getText())));
         thread.start();
     }//GEN-LAST:event_Button_StartActionPerformed
