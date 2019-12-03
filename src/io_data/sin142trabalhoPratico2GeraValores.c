@@ -19,7 +19,7 @@ void printVet(int seed, int modifier, char fileName[], char openfile[]) {
 }
 
 int main() {
-    int seed = 1234 + 4321; // Alterar para a soma das matrículas dos integrantes
+    int seed = 5153 + 5222 + 5155 + 5210 + 5188; // Alterar para a soma das matrículas dos integrantes
     srand(seed); // Inicializa a semente para gerar números pseudo alteatórios
     // modifier = 10 => atualizarValores
     printVet(seed, 10, "atualizarValores.txt", "w");
