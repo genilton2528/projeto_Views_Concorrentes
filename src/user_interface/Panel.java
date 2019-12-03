@@ -1,7 +1,5 @@
 package user_interface;
 
-import java.util.concurrent.Semaphore;
-
 public class Panel extends javax.swing.JFrame {
 
     public Panel() {
@@ -12,6 +10,7 @@ public class Panel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        button_Group = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         Panel_Thread = new javax.swing.JPanel();
         view_Thread_value = new javax.swing.JLabel();
@@ -24,6 +23,9 @@ public class Panel extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         sleep_Thread_time = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        Button_On = new javax.swing.JRadioButton();
+        Button_Off = new javax.swing.JRadioButton();
+        jLabel5 = new javax.swing.JLabel();
         Panel_Sequential = new javax.swing.JPanel();
         view_Label = new javax.swing.JLabel();
         like_Label = new javax.swing.JLabel();
@@ -63,61 +65,81 @@ public class Panel extends javax.swing.JFrame {
         jLabel2.setText("Tempo entre atualizaçoes:");
 
         sleep_Thread_time.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
-        sleep_Thread_time.setText("2");
+        sleep_Thread_time.setText("1");
 
         jLabel4.setText("ms");
+
+        button_Group.add(Button_On);
+        Button_On.setSelected(true);
+        Button_On.setText("On");
+
+        button_Group.add(Button_Off);
+        Button_Off.setText("Off");
+
+        jLabel5.setText("Exclusão mútua:");
 
         javax.swing.GroupLayout Panel_ThreadLayout = new javax.swing.GroupLayout(Panel_Thread);
         Panel_Thread.setLayout(Panel_ThreadLayout);
         Panel_ThreadLayout.setHorizontalGroup(
             Panel_ThreadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_ThreadLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap()
                 .addGroup(Panel_ThreadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_ThreadLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(Panel_ThreadLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(sleep_Thread_time, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(3, 3, 3)
-                        .addComponent(jLabel4)
-                        .addContainerGap())
+                        .addComponent(jLabel4))
                     .addGroup(Panel_ThreadLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(view_Thread_Label)
-                        .addGap(97, 97, 97)
-                        .addComponent(like_Thread_Label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(dislike_Thread_Label)
-                        .addGap(78, 78, 78))
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Button_On)
+                        .addGap(18, 18, 18)
+                        .addComponent(Button_Off)))
+                .addGap(0, 61, Short.MAX_VALUE))
+            .addGroup(Panel_ThreadLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(Panel_ThreadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel_ThreadLayout.createSequentialGroup()
                         .addGroup(Panel_ThreadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Panel_ThreadLayout.createSequentialGroup()
-                                .addComponent(view_Thread_value, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(43, 43, 43)
-                                .addComponent(like_Thread_value, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
-                                .addComponent(dislike_Thread_value, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(Panel_ThreadLayout.createSequentialGroup()
-                                .addGap(147, 147, 147)
-                                .addComponent(Button_Thread_Start)))
-                        .addContainerGap(60, Short.MAX_VALUE))))
+                            .addComponent(view_Thread_Label)
+                            .addComponent(like_Thread_Label))
+                        .addGap(22, 22, 22)
+                        .addGroup(Panel_ThreadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(like_Thread_value, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(view_Thread_value, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(Panel_ThreadLayout.createSequentialGroup()
+                        .addComponent(dislike_Thread_Label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(Panel_ThreadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Button_Thread_Start)
+                            .addComponent(dislike_Thread_value, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(35, 142, Short.MAX_VALUE))
         );
         Panel_ThreadLayout.setVerticalGroup(
             Panel_ThreadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_ThreadLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(35, 35, 35)
                 .addGroup(Panel_ThreadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(view_Thread_value, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(like_Thread_value, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dislike_Thread_value, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(Panel_ThreadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(like_Thread_Label)
-                    .addComponent(dislike_Thread_Label)
                     .addComponent(view_Thread_Label))
-                .addGap(44, 44, 44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Panel_ThreadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(like_Thread_Label)
+                    .addComponent(like_Thread_value, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Panel_ThreadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dislike_Thread_Label)
+                    .addComponent(dislike_Thread_value, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(Button_Thread_Start)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGap(23, 23, 23)
+                .addGroup(Panel_ThreadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Button_On)
+                    .addComponent(Button_Off)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
                 .addGroup(Panel_ThreadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sleep_Thread_time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -141,7 +163,7 @@ public class Panel extends javax.swing.JFrame {
         });
 
         sleep_time.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
-        sleep_time.setText("2");
+        sleep_time.setText("1");
 
         jLabel1.setText("Tempo entre atualizaçoes:");
 
@@ -161,63 +183,56 @@ public class Panel extends javax.swing.JFrame {
         Panel_SequentialLayout.setHorizontalGroup(
             Panel_SequentialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_SequentialLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(Panel_SequentialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Panel_SequentialLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(Panel_SequentialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Panel_SequentialLayout.createSequentialGroup()
-                                .addGap(123, 123, 123)
+                .addGap(15, 15, 15)
+                .addGroup(Panel_SequentialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Panel_SequentialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Panel_SequentialLayout.createSequentialGroup()
+                            .addComponent(like_Label)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(like_value, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Panel_SequentialLayout.createSequentialGroup()
+                            .addComponent(dislike_Label)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(Panel_SequentialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(Button_Start)
-                                .addContainerGap(200, Short.MAX_VALUE))
-                            .addGroup(Panel_SequentialLayout.createSequentialGroup()
-                                .addGroup(Panel_SequentialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(Panel_SequentialLayout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jLabel1)
-                                        .addGap(2, 2, 2)
-                                        .addComponent(sleep_time, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel3))
-                                    .addGroup(Panel_SequentialLayout.createSequentialGroup()
-                                        .addComponent(view_Label)
-                                        .addGap(97, 97, 97)
-                                        .addComponent(like_Label)
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addContainerGap())))
+                                .addComponent(dislike_value, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(Panel_SequentialLayout.createSequentialGroup()
-                        .addComponent(view_value, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(like_value, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(Panel_SequentialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Panel_SequentialLayout.createSequentialGroup()
-                                .addGap(56, 56, 56)
-                                .addComponent(dislike_Label))
-                            .addGroup(Panel_SequentialLayout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(dislike_value, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())))
+                        .addComponent(view_Label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(view_value, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 142, Short.MAX_VALUE))
+            .addGroup(Panel_SequentialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sleep_time, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(jLabel3)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         Panel_SequentialLayout.setVerticalGroup(
             Panel_SequentialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_SequentialLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(35, 35, 35)
                 .addGroup(Panel_SequentialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(view_value, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(like_value, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dislike_value, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(view_Label))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(Panel_SequentialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(like_Label)
+                    .addComponent(like_value, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Panel_SequentialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dislike_Label)
-                    .addComponent(view_Label))
-                .addGap(44, 44, 44)
+                    .addComponent(dislike_value, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(Button_Start)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(Panel_SequentialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sleep_time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3))
-                .addContainerGap())
+                .addGap(21, 21, 21))
         );
 
         jTabbedPane1.addTab("Sequencial", Panel_Sequential);
@@ -226,7 +241,9 @@ public class Panel extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,8 +279,86 @@ public class Panel extends javax.swing.JFrame {
             last += step;
         }
     }//GEN-LAST:event_Button_Thread_StartActionPerformed
-    
-    public static void main(String args[]) {        
+
+    public static void refresh(int view, int like, int dislike, int type) {
+        if (Panel.Button_On.isSelected()) {
+            Panel.refreshSync(view, like, dislike, type);
+        } else {
+            Panel.refreshASync(view, like, dislike, type);
+        }
+    }
+
+    public static void refreshASync(int view, int like, int dislike, int type) {
+        int newValue;
+        switch (type) {
+            case 1:
+                newValue = Convert.converteInt(Panel.view_Thread_value.getText()) + view;
+                Panel.view_Thread_value.setText(newValue + "");
+                Panel.view_Thread_value.repaint();
+
+                newValue = Convert.converteInt(Panel.like_Thread_value.getText()) + like;
+                Panel.like_Thread_value.setText(newValue + "");
+                Panel.like_Thread_value.repaint();
+
+                newValue = Convert.converteInt(Panel.dislike_Thread_value.getText()) + dislike;
+                Panel.dislike_Thread_value.setText(newValue + "");
+                Panel.dislike_Thread_value.repaint();
+
+                break;
+
+            case 2:
+                newValue = Convert.converteInt(Panel.view_value.getText()) + view;
+                Panel.view_value.setText(newValue + "");
+                Panel.view_value.repaint();
+
+                newValue = Convert.converteInt(Panel.like_value.getText()) + like;
+                Panel.like_value.setText(newValue + "");
+                Panel.like_value.repaint();
+
+                newValue = Convert.converteInt(Panel.dislike_value.getText()) + dislike;
+                Panel.dislike_value.setText(newValue + "");
+                Panel.dislike_value.repaint();
+
+                break;
+        }
+    }
+
+    public static synchronized void refreshSync(int view, int like, int dislike, int type) {
+        int newValue;
+        switch (type) {
+            case 1:
+                newValue = Convert.converteInt(Panel.view_Thread_value.getText()) + view;
+                Panel.view_Thread_value.setText(newValue + "");
+                Panel.view_Thread_value.repaint();
+
+                newValue = Convert.converteInt(Panel.like_Thread_value.getText()) + like;
+                Panel.like_Thread_value.setText(newValue + "");
+                Panel.like_Thread_value.repaint();
+
+                newValue = Convert.converteInt(Panel.dislike_Thread_value.getText()) + dislike;
+                Panel.dislike_Thread_value.setText(newValue + "");
+                Panel.dislike_Thread_value.repaint();
+
+                break;
+
+            case 2:
+                newValue = Convert.converteInt(Panel.view_value.getText()) + view;
+                Panel.view_value.setText(newValue + "");
+                Panel.view_value.repaint();
+
+                newValue = Convert.converteInt(Panel.like_value.getText()) + like;
+                Panel.like_value.setText(newValue + "");
+                Panel.like_value.repaint();
+
+                newValue = Convert.converteInt(Panel.dislike_value.getText()) + dislike;
+                Panel.dislike_value.setText(newValue + "");
+                Panel.dislike_value.repaint();
+
+                break;
+        }
+    }
+
+    public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -282,10 +377,13 @@ public class Panel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private static javax.swing.JRadioButton Button_Off;
+    private static javax.swing.JRadioButton Button_On;
     private javax.swing.JButton Button_Start;
     private javax.swing.JButton Button_Thread_Start;
     private javax.swing.JPanel Panel_Sequential;
     private javax.swing.JPanel Panel_Thread;
+    private javax.swing.ButtonGroup button_Group;
     private javax.swing.JLabel dislike_Label;
     private javax.swing.JLabel dislike_Thread_Label;
     public static javax.swing.JLabel dislike_Thread_value;
@@ -294,6 +392,7 @@ public class Panel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel like_Label;
     private javax.swing.JLabel like_Thread_Label;
